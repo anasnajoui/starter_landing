@@ -128,11 +128,15 @@ export default function Home() {
         throw new Error('URL di acquisto non ricevuto.');
       }
 
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Form submission error:', err);
       // Set a general error if API call fails
+      let message = 'Impossibile elaborare la richiesta.'; // Default message
+      if (err instanceof Error) { // Check if it's an Error object
+          message = err.message;
+      }
       if (!formErrors.general) { // Avoid overwriting specific API error
-        setFormErrors({ general: err.message || 'Impossibile elaborare la richiesta.' });
+        setFormErrors({ general: message }); // Use extracted message
       }
       setIsLoading(false);
     }

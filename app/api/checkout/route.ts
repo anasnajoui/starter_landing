@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
     console.log("Whop API response status:", response.status);
 
     if (!response.ok) {
-        let whopErrorText = await response.text(); // Try to get error text from Whop
+        const whopErrorText = await response.text(); // Change let to const
         console.error(`Whop API Error (${response.status}):`, whopErrorText);
         // Use Whop's error text if available, otherwise create a generic one
         const errorMessage = whopErrorText || `Failed to create checkout session. Status: ${response.status}`;
