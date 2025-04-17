@@ -199,9 +199,6 @@ export default function Home() {
                 src="https://www.loom.com/embed/4b23e5a114a94c8fa7ee81f1797b3c26?sid=3e78c2c6-b21f-4e92-9c7d-e3ac79d6f42e&autoplay=1&mute=1&playsinline=1"
                 allowFullScreen
                 allow="autoplay; fullscreen"
-                // Change @ts-ignore to @ts-expect-error
-                // @ts-ignore - playsinline is not standard but needed for iOS
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error - playsinline is not standard but needed for iOS
                 playsInline 
             >
@@ -459,7 +456,7 @@ Con Madani, succede davvero.
             Attiva Ora la Tua Starter Trial
           </DialogTitle>
           <DialogDescription>
-            Compila il modulo per attivare la trial. Dopo aver inviato il form, riceverai via email l'accesso al subaccount, la guida iniziale e il link per iniziare il mini-affiancamento.
+            Compila il modulo per attivare la trial. Dopo aver inviato il form, riceverai via email l&apos;accesso al subaccount, la guida iniziale e il link per iniziare il mini-affiancamento.
           </DialogDescription>
         </DialogHeader>
         
