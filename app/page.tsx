@@ -5,22 +5,12 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogFooter,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,7 +18,6 @@ import { cn } from "@/lib/utils";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -43,21 +32,11 @@ import {
 import {
   Check,
   X,
-  Target,
-  Gift,
-  Rocket,
   Users,
   MessageCircle,
   HelpCircle,
-  PlayCircle,
-  BookOpen,
-  Wrench,
-  Mail,
-  FileText,
-  CheckSquare,
   PencilLine,
   Star,
-  Clock,
   Brain,
   UserCheck,
   PhoneCall,
@@ -188,26 +167,24 @@ export default function Home() {
     { src: "https://www.acquisition.com/hubfs/Acquisition.com-Logo-Primary-Vertical-Sambucus.png", alt: "Acquisition Logo", featured: true },
     { src: "https://blog.logomyway.com/wp-content/uploads/2021/11/meta-logo.png", alt: "Meta Logo" },
     { src: "https://www.amst.com/template/images/google-partner.png", alt: "Google Partner Logo" },
-    // Add more logos here if needed - duplicates for scroll are handled below
   ];
 
   const avatarUrls = [
-      "https://assets.circle.so/0fiywop5o9gj2h3knrk3u73qpdsd", // Student 1
-      "https://assets-v2.circle.so/mwoolbvcozg1e5akmp7othir8gl5", // Student 2
-      "https://assets.circle.so/xiw1ube8vm86dv5t88ftu75t0d60", // Student 3
-      "https://assets.circle.so/xfhes0y1e4uabhuuc7b23cipa1l2"  // Student 4
+      "https://assets.circle.so/0fiywop5o9gj2h3knrk3u73qpdsd",
+      "https://assets-v2.circle.so/mwoolbvcozg1e5akmp7othir8gl5",
+      "https://assets.circle.so/xiw1ube8vm86dv5t88ftu75t0d60",
+      "https://assets.circle.so/xfhes0y1e4uabhuuc7b23cipa1l2"
   ];
 
   const senjaWidgetId = "6e0bac20-2338-4226-af21-a8def885d490";
 
-  // --- Restructured Comparison Data --- 
   const comparisonData = [
     { icon: Brain, feature: "Risultati Reali", normal: false, madani: "In media: 1° cliente in 12 giorni" },
     { icon: UserCheck, feature: "Affiancamento 1° Cliente", normal: false, madani: true },
     { icon: PhoneCall, feature: "Calls Settimanali (Vendita, Offerta, Leads etc..)", normal: false, madani: true },
     { icon: Languages, feature: "Supporto in italiano", normal: false, madani: true },
     { icon: PackageSearch, feature: "Scripts, Ads, Tools +300 Risorse", normal: false, madani: true },
-    { icon: Server, feature: "3 Highlevel Accounts", normal: true, madani: true }, // Kept for clarity
+    { icon: Server, feature: "3 Highlevel Accounts", normal: true, madani: true },
     { icon: Scale, feature: "Prezzo", normal: "97€/mese", madani: "97€/mese" },
   ];
 
@@ -222,7 +199,10 @@ export default function Home() {
                 src="https://www.loom.com/embed/4b23e5a114a94c8fa7ee81f1797b3c26?sid=3e78c2c6-b21f-4e92-9c7d-e3ac79d6f42e&autoplay=1&mute=1&playsinline=1"
                 allowFullScreen
                 allow="autoplay; fullscreen"
+                // Change @ts-ignore to @ts-expect-error
                 // @ts-ignore - playsinline is not standard but needed for iOS
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error - playsinline is not standard but needed for iOS
                 playsInline 
             >
             </iframe>
