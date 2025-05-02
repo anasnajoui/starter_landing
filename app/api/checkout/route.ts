@@ -53,7 +53,9 @@ export async function POST(request: NextRequest) {
           fullName: formData.fullName,
           email: formData.email,
           phone: `+39${formData.phone}`, // Combine country code and number
-          // Add any other relevant metadata here
+          // Add new fields to metadata
+          sector: formData.sector, 
+          socialLink: formData.socialLink,
         },
         // redirect_url: 'YOUR_SUCCESS_URL' // Optional: Add if you want Whop to redirect after success
       }),
